@@ -143,6 +143,19 @@ When the task is ready (`status: "ready"`), `solution` contains:
 | `challengekey` | `string` | Per-session challenge value |
 | `answer` | `string` | Hex-encoded solved puzzle answer |
 
+### Example
+
+```json
+{
+  "status": "ready",
+  "solution": {
+    "captchakey": "<challenge identifier>",
+    "challengekey": "<per-session challenge value>",
+    "answer": "8a3f<hex-encoded solved puzzle position>"
+  }
+}
+```
+
 ### How to use the result
 
 Submit `captchakey`, `challengekey`, and `answer` to the target site's form exactly as Capzy returns them.
