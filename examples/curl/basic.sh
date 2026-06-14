@@ -17,6 +17,11 @@ API_BASE="${API_BASE:-https://api.capzy.ai}"
 : "${CAPZY_KEY:?set CAPZY_KEY in your env (grab one at https://capzy.ai/auth/register)}"
 
 # Customize the task body to match the target site you're solving.
+#
+# White-label deployments: if the target site serves the widget from
+# its own CDN, add an "apiServer" field with the host from the page's
+# <script src=".../puzzle/get_js/?k=..."> tag. Omit for the default
+# Capy CDN (jp.api.capy.me).
 TASK=$(cat <<'JSON'
 {
     "type": "CapyTaskProxyLess",

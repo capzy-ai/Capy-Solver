@@ -25,6 +25,7 @@ Every field you can pass to `POST /createTask` for this task type.
 | `type` | `string` | yes | CapyTaskProxyLess or CapyTask |
 | `websiteURL` | `string` | yes | Full URL of the page |
 | `websiteKey` | `string` | yes | Capy sitekey (starts with `PUZZLE_`) |
+| `apiServer` | `string` | no | Custom Capy widget host. Default `https://jp.api.capy.me`. Pass this when the target site serves the widget from its own CDN (white-label Capy deployments) — e.g. `https://puzzleauth.captchasolutionweb.com`. Get the value from the `<script src="…/puzzle/get_js/?k=…">` tag on the target page. Aliases (any of these are accepted, same behavior): `api_server`, `capyApiServerSubdomain`. |
 
 
 ### Proxy fields (only for `CapyTask`)
@@ -100,6 +101,7 @@ stable machine-readable identifier. Common codes:
 - `ERROR_RATE_LIMITED` — too many createTask calls per second
 - `ERROR_TIMEOUT` — solve took longer than the cap (auto-refunded)
 - `ERROR_CAPTCHA_UNSOLVABLE` — solver gave up (auto-refunded)
+- `ERROR_CAPTCHA_INVALID_SITEKEY` — `websiteKey` is invalid, expired, deactivated, or registered against a different host than the default Capy CDN. Pre-flight probe catches this in <1 s; the error message echoes the host we checked. If the target site uses a white-label Capy deployment, pass `apiServer` (see above) — verifying the script src on the target page is the fastest way to find the right value.
 
 ## Naming conventions
 

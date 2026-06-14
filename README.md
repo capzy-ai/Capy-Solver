@@ -125,6 +125,7 @@ See [`examples/README.md`](examples/README.md) for setup details.
 | `type` | `string` | yes | CapyTaskProxyLess or CapyTask |
 | `websiteURL` | `string` | yes | Full URL of the page |
 | `websiteKey` | `string` | yes | Capy sitekey (starts with `PUZZLE_`) |
+| `apiServer` | `string` | no  | Custom Capy widget host. Defaults to `https://jp.api.capy.me`. Pass when the target site uses a white-label Capy CDN (find the value in the `<script src="…/puzzle/get_js/?k=…">` tag on the target page). Aliases: `api_server`, `capyApiServerSubdomain`. |
 | `proxyType` | `string` | no  | http | https | socks4 | socks5 (only for `CapyTask`) |
 | `proxyAddress` | `string` | no  | IP or hostname of your proxy (only for `CapyTask`) |
 | `proxyPort` | `integer` | no  | Port number of your proxy (only for `CapyTask`) |
