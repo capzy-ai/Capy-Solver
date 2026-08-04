@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capzy.ai/capzy-logo.svg" alt="Capzy" width="220" />
+<img src="https://capzy.ai/capzy-icon.png" alt="Capzy" width="96" />
 
 # Capy Puzzle Captcha Solver
 
@@ -125,7 +125,6 @@ See [`examples/README.md`](examples/README.md) for setup details.
 | `type` | `string` | yes | CapyTaskProxyLess or CapyTask |
 | `websiteURL` | `string` | yes | Full URL of the page |
 | `websiteKey` | `string` | yes | Capy sitekey (starts with `PUZZLE_`) |
-| `apiServer` | `string` | no  | Custom Capy widget host. Defaults to `https://jp.api.capy.me`. Pass when the target site uses a white-label Capy CDN (find the value in the `<script src="…/puzzle/get_js/?k=…">` tag on the target page). Aliases: `api_server`, `capyApiServerSubdomain`. |
 | `proxyType` | `string` | no  | http | https | socks4 | socks5 (only for `CapyTask`) |
 | `proxyAddress` | `string` | no  | IP or hostname of your proxy (only for `CapyTask`) |
 | `proxyPort` | `integer` | no  | Port number of your proxy (only for `CapyTask`) |
@@ -143,19 +142,6 @@ When the task is ready (`status: "ready"`), `solution` contains:
 | `captchakey` | `string` | Challenge identifier |
 | `challengekey` | `string` | Per-session challenge value |
 | `answer` | `string` | Hex-encoded solved puzzle answer |
-
-### Example
-
-```json
-{
-  "status": "ready",
-  "solution": {
-    "captchakey": "<challenge identifier>",
-    "challengekey": "<per-session challenge value>",
-    "answer": "8a3f<hex-encoded solved puzzle position>"
-  }
-}
-```
 
 ### How to use the result
 
@@ -177,6 +163,24 @@ Submit `captchakey`, `challengekey`, and `answer` to the target site's form exac
 Capzy solves 25+ captcha types. Full catalog at
 [capzy.ai/solvers](https://capzy.ai/solvers). Each type has its own
 solver repo on [github.com/capzy-ai](https://github.com/capzy-ai).
+
+## The Capzy platform
+
+Capzy is web access infrastructure for modern automation. Beyond captcha solving:
+
+| Product | What it does |
+|---------|--------------|
+| **[Solver API](https://capzy.ai/solvers)** | Solve 25+ captcha types through one HTTP API. |
+| **[Cloud Browser](https://capzy.ai/browser)** | Real remote Chrome over CDP / WebSocket, billed per GB. |
+| **[Fingerprint API](https://capzy.ai/fingerprints)** | Coherent, authentic browser fingerprints on demand. |
+| **[Proxies API](https://capzy.ai/proxies)** | Global proxy egress with simple per-GB pricing. |
+| **[Web Scraper API](https://capzy.ai/web-scraper)** | Fetch, render, bypass anti-bot, and extract in one call. |
+
+One API key and one wallet balance across every product.
+
+## Keywords
+
+`capy puzzle captcha solver`, `capy puzzle captcha captcha solver`, `capy puzzle captcha bypass`, `capy puzzle captcha api`, `solve capy puzzle captcha`, `capy puzzle captcha solving service`, `captcha solver`, `captcha solving api`, `automated captcha solver`, `captcha bypass api`
 
 ## License
 

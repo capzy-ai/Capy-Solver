@@ -30,11 +30,7 @@ async function solve() {
     task: {
       "type": "CapyTaskProxyLess",
       "websiteURL": "https://example.jp/form",
-      "websiteKey": "PUZZLE_abc123def456",
-      // White-label deployments: pass the host from the target page's
-      // <script src=".../puzzle/get_js/?k=..."> tag. Omit for the
-      // default Capy CDN (jp.api.capy.me).
-      // "apiServer": "https://puzzleauth.captchasolutionweb.com",
+      "websiteKey": "PUZZLE_abc123def456"
     },
   });
   if (created.errorId) {
